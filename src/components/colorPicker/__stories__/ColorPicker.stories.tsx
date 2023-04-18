@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { ColorPicker } from '../ColorPicker'
 
 export default {
-	title: 'All In/Color Picker',
+	title: 'Components/Color Picker',
 	component: ColorPicker,
 } as ComponentMeta<typeof ColorPicker>
 
