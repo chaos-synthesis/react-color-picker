@@ -25,11 +25,11 @@ jobs:
         with:
           node-version: '16'
           cache: yarn
-      - name: Install dependencies
+      - name: Install dependencies 📦
         run: yarn install --frozen-lockfile
-      - name: Build package
+      - name: Build package 🛠️
         run: yarn run build
-      - name: Create Release Pull Request or Publish to npm
+      - name: Create Release Pull Request or Publish to npm 🚀
         uses: changesets/action@v1
         with:
           publish: yarn run release
