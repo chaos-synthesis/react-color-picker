@@ -1,6 +1,6 @@
 {
 	"name": "@chaos-synthesis/react-color-picker",
-	"version": "0.5.4",
+	"version": "0.5.5",
 	"description": "An easy to use color picker for React.js",
 	"repository": {
 		"type": "git",
