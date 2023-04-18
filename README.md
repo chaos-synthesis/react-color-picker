@@ -34,11 +34,11 @@ import { ColorPicker } from '@chaos-synthesis/react-color-picker'
 import { useState } from 'react'
 
 function MyApp() {
-	// color value can be any valid Tinycolor2 constructor argument
-	const [color, setColor] = useState('rgba(255,255,255,1)')
+  // color value can be any valid Tinycolor2 constructor argument
+  const [color, setColor] = useState('rgba(255,255,255,1)')
 
-	// onChange callback will receive a Tinycolor2 instance
-	return <ColorPicker value={color} onChange={(tc) => setColor(tc.toRgbString())} presets={['rgba(100,255,150,1)']} />
+  // onChange callback will receive a Tinycolor2 instance
+  return <ColorPicker value={color} onChange={(tc) => setColor(tc.toRgbString())} presets={['rgba(100,255,150,1)']} />
 }
 ```
 
@@ -48,46 +48,46 @@ Using `ColorPickerProvider` to wrap your custom layout and ready to use componen
 
 ```js
 import {
-	ChannelInputs,
-	ColorBox,
-	ColorPickerProvider,
-	EyeDropper,
-	HueSlider,
-	OpacitySlider,
-	Presets,
+  ChannelInputs,
+  ColorBox,
+  ColorPickerProvider,
+  EyeDropper,
+  HueSlider,
+  OpacitySlider,
+  Presets,
 } from '@chaos-synthesis/react-color-picker'
 import { useState } from 'react'
 
 const presets = [
-	'rgba(255,0,0,1)', // Red
-	'rgba(0,255,0,1)', // Green
-	'rgba(0,0,255,1)', // Blue
+  'rgba(255,0,0,1)', // Red
+  'rgba(0,255,0,1)', // Green
+  'rgba(0,0,255,1)', // Blue
 ]
 const WIDTH = 300
 
 function CustomColorPicker() {
-	const [color, setColor] = useState('#CC00CC9F')
+  const [color, setColor] = useState('#CC00CC9F')
 
-	return (
-		<ColorPickerProvider color={color} onChange={setColor}>
-			<div style={{ width: WIDTH, margin: '0 auto' }}>
-				<ColorBox width={WIDTH} height={WIDTH} />
+  return (
+    <ColorPickerProvider color={color} onChange={setColor}>
+      <div style={{ width: WIDTH, margin: '0 auto' }}>
+        <ColorBox width={WIDTH} height={WIDTH} />
 
-				<div style={{ display: 'flex' }}>
-					<EyeDropper size={24} />
+        <div style={{ display: 'flex' }}>
+          <EyeDropper size={24} />
 
-					<div style={{ margin: '14px 0', flexGrow: 1 }}>
-						<HueSlider style={{ marginBottom: 12 }} />
-						<OpacitySlider />
-					</div>
-				</div>
+          <div style={{ margin: '14px 0', flexGrow: 1 }}>
+            <HueSlider style={{ marginBottom: 12 }} />
+            <OpacitySlider />
+          </div>
+        </div>
 
-				<ChannelInputs inputType="rgb" />
+        <ChannelInputs inputType="rgb" />
 
-				<Presets items={presets} />
-			</div>
-		</ColorPickerProvider>
-	)
+        <Presets items={presets} />
+      </div>
+    </ColorPickerProvider>
+  )
 }
 ```
 
@@ -101,20 +101,20 @@ Create your own components by using hooks:
 import { useAlphaChannel, useHexStringColor } from '@chaos-synthesis/react-color-picker'
 
 function CustomOpacitySlider() {
-	const [value, setValue] = useAlphaChannel()
-	const [background] = useHexStringColor()
+  const [value, setValue] = useAlphaChannel()
+  const [background] = useHexStringColor()
 
-	return (
-		<input
-			type="range"
-			min="0"
-			max="100"
-			step="1"
-			value={value}
-			onChange={(e) => setValue(+e.target.value)}
-			style={{ backgroundColor: background }}
-		/>
-	)
+  return (
+    <input
+      type="range"
+      min="0"
+      max="100"
+      step="1"
+      value={value}
+      onChange={(e) => setValue(+e.target.value)}
+      style={{ backgroundColor: background }}
+    />
+  )
 }
 ```
 
