@@ -8,5 +8,5 @@ updates:
       interval: 'monthly'
     open-pull-requests-limit: 3
     ignore:
-      - dependency-name: 'tinycolor2'
-        update-types: ['version-update:semver-minor']
+      - dependency-name: '*'
+        update-types: ['version-update:semver-major']
