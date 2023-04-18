@@ -29,9 +29,3 @@ jobs:
           title: 'ci: release packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - id: build and publish storybook
-        uses: bitovi/github-actions-react-to-ghp@v1.2.0
-        with:
-          path: storybook-static
-          build_command: yarn build:storybook
