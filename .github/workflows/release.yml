@@ -5,6 +5,7 @@ on:
       - main
 permissions:
   id-token: write
+  pages: write
   deployments: write
   contents: write
   statuses: write
@@ -39,11 +40,6 @@ jobs:
 
       - name: Build Storybook 🛠️
         run: yarn build:storybook
-      - name: Deploy GH Pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: storybook-static # The folder the action should deploy.
-
       - name: Deploy to GitHub Pages 🚀
         uses: actions/upload-pages-artifact@v1.0.4
         with:
