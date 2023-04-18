@@ -29,3 +29,19 @@ jobs:
           title: 'ci: release packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Storybook 🛠️
+        run: yarn build:storybook
+      - name: Deploy GH Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: storybook-static # The folder the action should deploy.
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: actions/upload-pages-artifact@v1.0.4
+        with:
+          path: storybook-static
+      - id: deploy
+        uses: actions/deploy-pages@v1
+        with:
+          token: ${{ github.token }}
